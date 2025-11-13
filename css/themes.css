@@ -1,0 +1,61 @@
+/* ============================================
+   THEMES.CSS - Color Themes
+   CD-1 Rezoning Application Checker
+   ============================================ */
+
+/* City of Vancouver Official Theme (Default) */
+.theme-vancouver {
+  --color-primary: #0051A5;
+  --color-secondary: #00A3E0;
+}
+
+/* Alternative themes can be added here */
+
+/* Dark Mode (Optional) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg-primary: #1a1a1a;
+    --color-bg-secondary: #2d2d2d;
+    --color-bg-tertiary: #3d3d3d;
+    --color-text-primary: #e0e0e0;
+    --color-text-secondary: #a0a0a0;
+    --color-border: #4d4d4d;
+  }
+
+  .card, .modal, .requirement-card {
+    background-color: var(--color-bg-primary);
+    border-color: var(--color-border);
+  }
+
+  input, select, textarea {
+    background-color: var(--color-bg-tertiary);
+    color: var(--color-text-primary);
+    border-color: var(--color-border);
+  }
+}
+
+/* Print Styles */
+@media print {
+  .app-header,
+  .checklist-sidebar,
+  .checklist-details,
+  button,
+  .btn {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+  }
+
+  .main-content {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .requirement-card {
+    page-break-inside: avoid;
+    border: 1px solid #ddd;
+    margin-bottom: 8px;
+  }
+}
