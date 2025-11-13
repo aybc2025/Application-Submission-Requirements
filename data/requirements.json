@@ -1,0 +1,944 @@
+{
+  "1.1": {
+    "id": "1.1",
+    "category": "Application Forms and Fees",
+    "name": "Rezoning Application Form",
+    "criteria": "REQUIRED",
+    "description": "A completed Rezoning Application Form (separate document).",
+    "conditions": null,
+    "dependencies": [],
+    "relatedItems": ["1.2"],
+    "estimatedTime": "15 minutes",
+    "downloadLinks": ["https://vancouver.ca/rezoning-form"],
+    "pdfPageReference": "Page 3, Item 1.1"
+  },
+  "1.2": {
+    "id": "1.2",
+    "category": "Application Forms and Fees",
+    "name": "Rezoning Application Fee",
+    "criteria": "REQUIRED",
+    "description": "Fee is based on site area and geographic location. Payable at time of application. The Rezoning Planner will issue a payment notice after reviewing application submission package and confirming completeness.",
+    "conditions": null,
+    "dependencies": [],
+    "relatedItems": ["1.1"],
+    "estimatedTime": "Immediate",
+    "resources": [
+      {
+        "name": "Schedule 2 of the Zoning and Development Fee By-Law",
+        "url": "https://vancouver.ca"
+      }
+    ],
+    "pdfPageReference": "Page 3, Item 1.2"
+  },
+  "1.3": {
+    "id": "1.3",
+    "category": "Application Forms and Fees",
+    "name": "Sign By-law Amendment Application Fee",
+    "criteria": "CONDITIONAL",
+    "description": "The Rezoning Planner will verify prior uses on the site. Payable at time of application. The Rezoning Planner will issue a payment notice along with rezoning application fee.",
+    "conditions": {
+      "type": "AND",
+      "rules": [
+        {
+          "field": "proposedUses.hasCommercial",
+          "operator": "==",
+          "value": true
+        },
+        {
+          "field": "existingUses.hasCommercial",
+          "operator": "==",
+          "value": false
+        }
+      ]
+    },
+    "dependencies": [],
+    "relatedItems": [],
+    "resources": [
+      {
+        "name": "Schedule 1 of the Sign Fee By-law, section 1.5",
+        "url": "https://vancouver.ca"
+      }
+    ],
+    "pdfPageReference": "Page 3, Item 1.3"
+  },
+  "2.1": {
+    "id": "2.1",
+    "category": "Property Information",
+    "name": "Title Search",
+    "criteria": "REQUIRED",
+    "description": "Copy of current title search, from the Land Title Office, for each parcel in the proposal.",
+    "conditions": null,
+    "dependencies": [],
+    "relatedItems": ["2.2"],
+    "estimatedTime": "1-2 days",
+    "pdfPageReference": "Page 3, Item 2.1"
+  },
+  "2.2": {
+    "id": "2.2",
+    "category": "Property Information",
+    "name": "Charge Summary",
+    "criteria": "REQUIRED",
+    "description": "Written summary by a solicitor (on company letterhead) describing each charge on title (except financial charges) and advising whether they are affected by the proposal. Copies of each registered charge document must be included. Not to be confused with a Charge Search.",
+    "conditions": null,
+    "dependencies": ["2.1"],
+    "relatedItems": [],
+    "estimatedTime": "3-5 days",
+    "preparedBy": "Solicitor",
+    "pdfPageReference": "Page 3, Item 2.2"
+  },
+  "2.3": {
+    "id": "2.3",
+    "category": "Property Information",
+    "name": "BC Company Summary",
+    "criteria": "CONDITIONAL",
+    "description": "Corporate search for registered owner confirming legal name of owner.",
+    "conditions": {
+      "type": "OR",
+      "rules": [
+        {
+          "field": "ownerType",
+          "operator": "==",
+          "value": "company"
+        },
+        {
+          "field": "ownerType",
+          "operator": "==",
+          "value": "society"
+        }
+      ]
+    },
+    "dependencies": [],
+    "relatedItems": [],
+    "resources": [
+      {
+        "name": "BC Registries and Online Services",
+        "url": "https://www.bcregistry.ca"
+      }
+    ],
+    "pdfPageReference": "Page 3, Item 2.3"
+  },
+  "2.4": {
+    "id": "2.4",
+    "category": "Property Information",
+    "name": "Rezoning Consent Letter(s)",
+    "criteria": "CONDITIONAL",
+    "description": "Proof that all owners are aware and support the application to rezone their property. Resubmission of this form is required if ownership changes during the rezoning process.",
+    "conditions": {
+      "type": "AND",
+      "rules": [
+        {
+          "field": "hasMultipleOwners",
+          "operator": "==",
+          "value": true
+        }
+      ]
+    },
+    "dependencies": [],
+    "relatedItems": [],
+    "estimatedTime": "1 day",
+    "pdfPageReference": "Page 4, Item 2.4"
+  },
+  "3.1": {
+    "id": "3.1",
+    "category": "Site Plans and Design Package",
+    "name": "Building Grades and Response Letter",
+    "criteria": "REQUIRED",
+    "description": "Building grades at all four corners of the site are required. Request building grades from City of Vancouver Engineering Department, attaching a copy of the staff Letter of Response for the rezoning enquiry, if applicable. Due to wait times, it is advisable to apply for building grades as soon as possible. Note that building grades are valid for up to 5 years after the issued date. After 5 years, they must be revalidated.",
+    "conditions": null,
+    "dependencies": [],
+    "relatedItems": ["3.2"],
+    "estimatedTime": "4-6 weeks",
+    "priority": "high",
+    "resources": [
+      {
+        "name": "Building Grades for Sidewalk and Street Elevation",
+        "url": "https://vancouver.ca/building-grades"
+      }
+    ],
+    "pdfPageReference": "Page 4, Item 3.1"
+  },
+  "3.2": {
+    "id": "3.2",
+    "category": "Site Plans and Design Package",
+    "name": "Survey Plan",
+    "criteria": "REQUIRED",
+    "description": "Topographic survey plan signed and sealed by a BCLS, showing the location, dimensions and area of the site, including topography and location of existing buildings, plus public realm elements for adjacent frontages (trees, curb, street lighting, street furniture, etc.). Survey plan shown at a scale not less than 1/16\"=1' 0\" (1:200).",
+    "conditions": null,
+    "dependencies": [],
+    "relatedItems": ["3.1"],
+    "estimatedTime": "2-3 weeks",
+    "estimatedCost": "$2,000-$5,000",
+    "preparedBy": "BC Land Surveyor (BCLS)",
+    "pdfPageReference": "Page 4, Item 3.2"
+  },
+  "3.3": {
+    "id": "3.3",
+    "category": "Site Plans and Design Package",
+    "name": "Rezoning Booklet",
+    "criteria": "REQUIRED",
+    "description": "See Appendix B for detailed requirements. Format: Digital tabloid (11\"x17\"). Note: A limited number of paper copies may be requested for reference after submission.",
+    "conditions": null,
+    "dependencies": [],
+    "relatedItems": ["3.4"],
+    "estimatedTime": "2-4 weeks",
+    "resources": [
+      {
+        "name": "Appendix B: Rezoning Booklet Contents",
+        "url": "#appendix-b"
+      }
+    ],
+    "pdfPageReference": "Page 4, Item 3.3"
+  },
+  "3.4": {
+    "id": "3.4",
+    "category": "Site Plans and Design Package",
+    "name": "Architectural Drawings",
+    "criteria": "REQUIRED",
+    "description": "See Appendix C for detailed requirements. Format: Digital Arch D (24\"x36\") or Arch E (36\"x48\"). Note: A limited number of paper copies may be requested for reference after submission.",
+    "conditions": null,
+    "dependencies": [],
+    "relatedItems": ["3.3"],
+    "estimatedTime": "2-4 weeks",
+    "resources": [
+      {
+        "name": "Appendix C: Architectural Drawings Contents",
+        "url": "#appendix-c"
+      }
+    ],
+    "pdfPageReference": "Page 4, Item 3.4"
+  },
+  "4.1": {
+    "id": "4.1",
+    "category": "Studies, Reports and Assessments",
+    "name": "Development Water Demands",
+    "criteria": "REQUIRED",
+    "description": "A single PDF document containing: Average day domestic water demands, Peak hour domestic water demands, Fire flow calculations based on the Fire Underwriter's Survey document, Water Supply for Public Fire Protection (sealed by a qualified Engineer).",
+    "conditions": null,
+    "dependencies": [],
+    "relatedItems": [],
+    "estimatedTime": "1-2 weeks",
+    "estimatedCost": "$1,500-$3,000",
+    "preparedBy": "Qualified Engineer",
+    "contact": "utilities.servicing@vancouver.ca",
+    "pdfPageReference": "Page 5, Item 4.1"
+  },
+  "4.2": {
+    "id": "4.2",
+    "category": "Studies, Reports and Assessments",
+    "name": "Site Disclosure Statement",
+    "criteria": "REQUIRED",
+    "description": "Even if disclosing no prior Schedule 2 uses on site, please include the completed form.",
+    "conditions": null,
+    "dependencies": [],
+    "relatedItems": ["4.3"],
+    "estimatedTime": "30 minutes",
+    "resources": [
+      {
+        "name": "BC Ministry of Environmental Protection & Sustainability",
+        "url": "https://www2.gov.bc.ca/gov/content/environment"
+      },
+      {
+        "name": "Environmental Management Act Schedule 2 activities",
+        "url": "https://www2.gov.bc.ca/gov/content/environment"
+      }
+    ],
+    "pdfPageReference": "Page 5, Item 4.2"
+  },
+  "4.3": {
+    "id": "4.3",
+    "category": "Studies, Reports and Assessments",
+    "name": "Phase 1 Environmental Site Assessment (ESA)",
+    "criteria": "CONDITIONAL",
+    "description": "A report prepared by a certified consultant that reviews the site's risk of environmental contamination and recommends whether further investigation is recommended.",
+    "conditions": {
+      "type": "AND",
+      "rules": [
+        {
+          "field": "existingUses.hasSchedule2Activities",
+          "operator": "==",
+          "value": true
+        }
+      ]
+    },
+    "dependencies": ["4.2"],
+    "relatedItems": [],
+    "estimatedTime": "2-4 weeks",
+    "estimatedCost": "$3,000-$8,000",
+    "preparedBy": "Certified environmental consultant",
+    "pdfPageReference": "Page 5, Item 4.3"
+  },
+  "4.4": {
+    "id": "4.4",
+    "category": "Studies, Reports and Assessments",
+    "name": "Green and Resilient Building Measures Package",
+    "criteria": "REQUIRED",
+    "description": "Submission requirements as outlined in the Green Buildings Policy for Rezoning – Process and Requirements Bulletin: Embodied Carbon Design Report (Excel & PDF), Supplementary raw data (Excel), Resilient Buildings Planning Worksheet (Excel & PDF), Letter of commitment (PDF).",
+    "conditions": null,
+    "dependencies": [],
+    "relatedItems": [],
+    "estimatedTime": "2-3 weeks",
+    "resources": [
+      {
+        "name": "Green Buildings Policy for Rezoning",
+        "url": "https://vancouver.ca/green-buildings"
+      }
+    ],
+    "pdfPageReference": "Page 5, Item 4.4"
+  },
+  "4.5": {
+    "id": "4.5",
+    "category": "Studies, Reports and Assessments",
+    "name": "Preliminary Hydrogeological Study",
+    "criteria": "CONDITIONAL",
+    "description": "Preliminary hydrogeological review as part of the groundwater requirements.",
+    "conditions": {
+      "type": "OR",
+      "rules": [
+        {
+          "field": "siteArea",
+          "operator": ">=",
+          "value": 8000,
+          "unit": "sqm"
+        },
+        {
+          "field": "proposedFloorArea",
+          "operator": ">=",
+          "value": 45000,
+          "unit": "sqm"
+        },
+        {
+          "field": "hasGeoexchange",
+          "operator": "==",
+          "value": true
+        },
+        {
+          "field": "location",
+          "operator": "in",
+          "value": ["Broadway Plan Area"]
+        },
+        {
+          "field": "inGroundwaterArea",
+          "operator": "==",
+          "value": true
+        }
+      ]
+    },
+    "dependencies": ["3.1"],
+    "relatedItems": [],
+    "estimatedTime": "2-4 weeks",
+    "estimatedCost": "$3,000-$8,000",
+    "preparedBy": "Certified hydrogeologist",
+    "resources": [
+      {
+        "name": "Groundwater Management Bulletin",
+        "url": "https://vancouver.ca/groundwater-bulletin"
+      },
+      {
+        "name": "Groundwater Areas of Concern Map",
+        "url": "https://vancouver.ca/groundwater-map"
+      }
+    ],
+    "pdfPageReference": "Page 6, Item 4.5"
+  },
+  "4.6": {
+    "id": "4.6",
+    "category": "Studies, Reports and Assessments",
+    "name": "Transportation Demand Management (TDM) Plan",
+    "criteria": "CONDITIONAL",
+    "description": "TDM submissions are required at Development Permit stage, but recommended at Rezoning stage. At Rezoning, stating the intent to use a TDM Plan to reduce parking requirements (if optional) and/or the intended TDM Plan (A, B, C, or D) is recommended.",
+    "conditions": {
+      "type": "OR",
+      "rules": [
+        {
+          "field": "location",
+          "operator": "in",
+          "value": ["Downtown", "Broadway Plan Area", "Transit-Oriented Area"]
+        },
+        {
+          "field": "isLargeSite",
+          "operator": "==",
+          "value": true
+        }
+      ]
+    },
+    "dependencies": [],
+    "relatedItems": ["4.7"],
+    "estimatedTime": "2-4 weeks",
+    "estimatedCost": "$5,000-$15,000",
+    "resources": [
+      {
+        "name": "Transportation Demand Management",
+        "url": "https://vancouver.ca/tdm"
+      },
+      {
+        "name": "Parking By-law Section 4.1.6",
+        "url": "https://vancouver.ca/parking-bylaw"
+      }
+    ],
+    "pdfPageReference": "Page 6, Item 4.6"
+  },
+  "4.7": {
+    "id": "4.7",
+    "category": "Studies, Reports and Assessments",
+    "name": "Transportation Assessment and Management Study (TAMS)",
+    "criteria": "CONDITIONAL",
+    "description": "A study prepared by a transportation consultant that assesses the impact of a proposed development on existing transportation infrastructure, recommends mitigation measures, and documents the results. Studies requested may include: Transportation Impact Study, Assessment of Parking Bylaw requirements.",
+    "conditions": {
+      "type": "OR",
+      "rules": [
+        {
+          "field": "isLargeSite",
+          "operator": "==",
+          "value": true
+        },
+        {
+          "field": "hasInstitutionalUse",
+          "operator": "==",
+          "value": true
+        }
+      ]
+    },
+    "dependencies": [],
+    "relatedItems": ["4.6"],
+    "estimatedTime": "4-8 weeks",
+    "estimatedCost": "$15,000-$40,000",
+    "preparedBy": "Transportation consultant",
+    "resources": [
+      {
+        "name": "TAMS Guidelines for Consultants",
+        "url": "https://vancouver.ca/tams-guidelines"
+      }
+    ],
+    "pdfPageReference": "Page 7, Item 4.7"
+  },
+  "4.8": {
+    "id": "4.8",
+    "category": "Studies, Reports and Assessments",
+    "name": "Arborist Report and Supporting Documents",
+    "criteria": "CONDITIONAL",
+    "description": "A single PDF document containing all submission requirements.",
+    "conditions": {
+      "type": "OR",
+      "rules": [
+        {
+          "field": "hasBylawSizedTrees",
+          "operator": "==",
+          "value": true
+        },
+        {
+          "field": "hasReplacementTrees",
+          "operator": "==",
+          "value": true
+        },
+        {
+          "field": "hasOffsiteTrees",
+          "operator": "==",
+          "value": true
+        },
+        {
+          "field": "isLargeSite",
+          "operator": "==",
+          "value": true
+        }
+      ]
+    },
+    "dependencies": ["3.2"],
+    "relatedItems": [],
+    "estimatedTime": "1-2 weeks",
+    "estimatedCost": "$1,500-$5,000",
+    "preparedBy": "Certified arborist",
+    "resources": [
+      {
+        "name": "Protection of Trees By-law",
+        "url": "https://vancouver.ca/trees-bylaw"
+      }
+    ],
+    "pdfPageReference": "Page 7, Item 4.8"
+  },
+  "4.9": {
+    "id": "4.9",
+    "category": "Studies, Reports and Assessments",
+    "name": "Heritage Conservation",
+    "criteria": "CONDITIONAL",
+    "description": "Applies to properties listed on the Vancouver Heritage Register (VHR), and those identified to have potential heritage value for potential addition to the VHR.",
+    "conditions": {
+      "type": "AND",
+      "rules": [
+        {
+          "field": "existingUses.hasHeritage",
+          "operator": "==",
+          "value": true
+        }
+      ]
+    },
+    "dependencies": [],
+    "relatedItems": [],
+    "estimatedTime": "4-8 weeks",
+    "resources": [
+      {
+        "name": "Heritage Review Process",
+        "url": "https://vancouver.ca/heritage-review"
+      },
+      {
+        "name": "Vancouver Heritage Register",
+        "url": "https://vancouver.ca/heritage-register"
+      }
+    ],
+    "pdfPageReference": "Page 8, Item 4.9"
+  },
+  "4.10": {
+    "id": "4.10",
+    "category": "Studies, Reports and Assessments",
+    "name": "Social Impact Study",
+    "criteria": "CONDITIONAL",
+    "description": "Submit a completed Neighbourhood Fit: New Business and Development Evaluation Form.",
+    "conditions": {
+      "type": "AND",
+      "rules": [
+        {
+          "field": "location",
+          "operator": "in",
+          "value": ["Downtown Eastside - CBDA"]
+        }
+      ]
+    },
+    "dependencies": [],
+    "relatedItems": [],
+    "estimatedTime": "2-4 weeks",
+    "resources": [
+      {
+        "name": "Neighbourhood Fit Considerations Bulletin",
+        "url": "https://vancouver.ca/neighbourhood-fit"
+      }
+    ],
+    "pdfPageReference": "Page 8, Item 4.10"
+  },
+  "4.11": {
+    "id": "4.11",
+    "category": "Studies, Reports and Assessments",
+    "name": "General Policy for Higher Buildings Requirements",
+    "criteria": "CONDITIONAL",
+    "description": "Provide substantial materials and information on how the proposal meets the Higher Buildings Policy, specifically addressing: architectural creativity and excellence, carbon neutrality objectives, public legacy, microclimate effects, and minimizing shadowing and view impacts.",
+    "conditions": {
+      "type": "AND",
+      "rules": [
+        {
+          "field": "location",
+          "operator": "==",
+          "value": "Downtown"
+        },
+        {
+          "field": "seekingSignificantHeight",
+          "operator": "==",
+          "value": true
+        }
+      ]
+    },
+    "dependencies": [],
+    "relatedItems": [],
+    "estimatedTime": "4-6 weeks",
+    "resources": [
+      {
+        "name": "Higher Buildings Policy",
+        "url": "https://vancouver.ca/higher-buildings"
+      }
+    ],
+    "pdfPageReference": "Page 8, Item 4.11"
+  },
+  "4.12": {
+    "id": "4.12",
+    "category": "Studies, Reports and Assessments",
+    "name": "Rezoning Policy for Sustainable Large Developments Package",
+    "criteria": "CONDITIONAL",
+    "description": "A single PDF document containing studies indicating how the proposal intends to meet the eight requirements (A to H) for sustainable large developments.",
+    "conditions": {
+      "type": "OR",
+      "rules": [
+        {
+          "field": "siteArea",
+          "operator": ">=",
+          "value": 8000,
+          "unit": "sqm"
+        },
+        {
+          "field": "proposedFloorArea",
+          "operator": ">=",
+          "value": 45000,
+          "unit": "sqm"
+        }
+      ]
+    },
+    "dependencies": [],
+    "relatedItems": [],
+    "estimatedTime": "4-8 weeks",
+    "estimatedCost": "$20,000-$50,000",
+    "resources": [
+      {
+        "name": "Rezoning Policy for Sustainable Large Developments",
+        "url": "https://vancouver.ca/sustainable-large-developments"
+      }
+    ],
+    "pdfPageReference": "Page 8, Item 4.12"
+  },
+  "4.13": {
+    "id": "4.13",
+    "category": "Studies, Reports and Assessments",
+    "name": "Mass Timber Policy for Rezonings",
+    "criteria": "CONDITIONAL",
+    "description": "Clearly indicate the intent to construct a mass timber building in the Rezoning Booklet submission.",
+    "conditions": {
+      "type": "AND",
+      "rules": [
+        {
+          "field": "proposedUses.hasMassTimber",
+          "operator": "==",
+          "value": true
+        }
+      ]
+    },
+    "dependencies": [],
+    "relatedItems": ["3.3"],
+    "estimatedTime": "1 week",
+    "resources": [
+      {
+        "name": "Mass Timber Policy for Rezonings",
+        "url": "https://vancouver.ca/mass-timber"
+      }
+    ],
+    "pdfPageReference": "Page 9, Item 4.13"
+  },
+  "5.1": {
+    "id": "5.1",
+    "category": "Additional Information",
+    "name": "Community-Serving Spaces Information Form",
+    "criteria": "REQUIRED",
+    "description": "Submit a completed Community-Serving Spaces Information Form. If provided at the rezoning enquiry stage, the same can be submitted for the rezoning application.",
+    "conditions": null,
+    "dependencies": [],
+    "relatedItems": [],
+    "estimatedTime": "30 minutes",
+    "resources": [
+      {
+        "name": "Community-Serving Spaces Bulletin",
+        "url": "https://vancouver.ca/community-spaces"
+      }
+    ],
+    "pdfPageReference": "Page 9, Item 5.1"
+  },
+  "5.2": {
+    "id": "5.2",
+    "category": "Additional Information",
+    "name": "Renter Screening Form",
+    "criteria": "CONDITIONAL",
+    "description": "Complete the Renter Screening Form. Applicants that submitted a Renter Screening Form as part of a rezoning enquiry should submit an updated renter screening form to reflect tenant information at the time of rezoning application.",
+    "conditions": {
+      "type": "AND",
+      "rules": [
+        {
+          "field": "existingUses.hasResidentialTenants",
+          "operator": "==",
+          "value": true
+        }
+      ]
+    },
+    "dependencies": [],
+    "relatedItems": ["6.3"],
+    "estimatedTime": "1-2 hours",
+    "contact": "trp@vancouver.ca",
+    "resources": [
+      {
+        "name": "Tenant Relocation and Protection Policy",
+        "url": "https://vancouver.ca/trp-policy"
+      },
+      {
+        "name": "Renter relocation resources",
+        "url": "https://vancouver.ca/renter-relocation"
+      }
+    ],
+    "pdfPageReference": "Page 9, Item 5.2"
+  },
+  "5.3": {
+    "id": "5.3",
+    "category": "Additional Information",
+    "name": "Resident Screening Form for Community Care and Assisted Living Residences",
+    "criteria": "CONDITIONAL",
+    "description": "Complete the Resident Screening Form for Community Care and Assisted Living Residences. Applicants that submitted this form as part of a rezoning enquiry must submit an updated form to reflect resident information at the time of rezoning application.",
+    "conditions": {
+      "type": "OR",
+      "rules": [
+        {
+          "field": "existingUses.hasCommunityCare",
+          "operator": "==",
+          "value": true
+        },
+        {
+          "field": "existingUses.hasAssistedLiving",
+          "operator": "==",
+          "value": true
+        }
+      ]
+    },
+    "dependencies": [],
+    "relatedItems": ["6.4"],
+    "estimatedTime": "1-2 hours",
+    "resources": [
+      {
+        "name": "Resident Relocation Policy",
+        "url": "https://vancouver.ca/resident-relocation"
+      }
+    ],
+    "pdfPageReference": "Page 9, Item 5.3"
+  },
+  "5.4": {
+    "id": "5.4",
+    "category": "Additional Information",
+    "name": "Community Amenity Contribution (CAC) Offer Form",
+    "criteria": "CONDITIONAL",
+    "description": "Complete the CAC Offer Form attached to end of the Rezoning Application Form.",
+    "conditions": {
+      "type": "NOT",
+      "rules": [
+        {
+          "field": "exemptFromCAC",
+          "operator": "==",
+          "value": true
+        }
+      ]
+    },
+    "dependencies": [],
+    "relatedItems": ["5.5", "5.6"],
+    "estimatedTime": "1-2 hours",
+    "resources": [
+      {
+        "name": "Community Amenity Contributions Policy for Rezonings",
+        "url": "https://vancouver.ca/cac-policy"
+      }
+    ],
+    "pdfPageReference": "Page 9, Item 5.4"
+  },
+  "5.5": {
+    "id": "5.5",
+    "category": "Additional Information",
+    "name": "Real Estate Pro Forma Analysis",
+    "criteria": "CONDITIONAL",
+    "description": "Submit land residual development pro-forma for: 1) Residual land value under existing zoning, and 2) Residual land value under rezoning. Provide market evidence to support pro-forma variables and valuation.",
+    "conditions": {
+      "type": "AND",
+      "rules": [
+        {
+          "field": "cacNegotiated",
+          "operator": "==",
+          "value": true
+        }
+      ]
+    },
+    "dependencies": ["5.4"],
+    "relatedItems": ["5.6"],
+    "estimatedTime": "1-2 weeks",
+    "estimatedCost": "$3,000-$10,000",
+    "preparedBy": "Real estate consultant",
+    "pdfPageReference": "Page 10, Item 5.5"
+  },
+  "5.6": {
+    "id": "5.6",
+    "category": "Additional Information",
+    "name": "Quantity Survey (QS) Elemental Cost Report (Class C)",
+    "criteria": "CONDITIONAL",
+    "description": "Submit a full Quantity Survey (QS) Elemental Cost Report (Class C) including a cover letter, prepared and signed off by a certified cost professional (PQS, MRICS, GSC) and backup cost details. For In-kind CAC, a full breakout cost details along with the Class C cost report is required.",
+    "conditions": {
+      "type": "AND",
+      "rules": [
+        {
+          "field": "cacNegotiated",
+          "operator": "==",
+          "value": true
+        }
+      ]
+    },
+    "dependencies": ["5.4"],
+    "relatedItems": ["5.5"],
+    "estimatedTime": "2-3 weeks",
+    "estimatedCost": "$5,000-$15,000",
+    "preparedBy": "Certified cost professional (PQS/MRICS/GSC)",
+    "pdfPageReference": "Page 10, Item 5.6"
+  },
+  "5.7": {
+    "id": "5.7",
+    "category": "Additional Information",
+    "name": "Public Art Requirement",
+    "criteria": "CONDITIONAL",
+    "description": "Applicants must discuss public art opportunities and local area plans prior to electing one of two options, artwork on-site or cash-in-lieu. After application submission, please contact public art staff within 90 days and prior to hiring a public art consultant. A legal agreement will be required to be registered on title.",
+    "conditions": {
+      "type": "OR",
+      "rules": [
+        {
+          "field": "proposedFloorArea",
+          "operator": ">=",
+          "value": 9290,
+          "unit": "sqm"
+        }
+      ]
+    },
+    "dependencies": [],
+    "relatedItems": [],
+    "estimatedTime": "Ongoing",
+    "contact": "publicart@vancouver.ca",
+    "resources": [
+      {
+        "name": "Public Art Policy for Rezoned Developments",
+        "url": "https://vancouver.ca/public-art"
+      }
+    ],
+    "pdfPageReference": "Page 11, Item 5.7"
+  },
+  "5.8": {
+    "id": "5.8",
+    "category": "Additional Information",
+    "name": "Development Cost Levy (DCL) Waiver Request Form",
+    "criteria": "CONDITIONAL",
+    "description": "A waiver or reduction of City-wide and Area-specific DCLs is available to applications that meet tenure, unit size and starting rent criteria. The requisite application form must be requested from your Rezoning Planner. Note: A waiver must be sought at the rezoning stage.",
+    "conditions": {
+      "type": "AND",
+      "rules": [
+        {
+          "field": "seekingDCLWaiver",
+          "operator": "==",
+          "value": true
+        }
+      ]
+    },
+    "dependencies": [],
+    "relatedItems": [],
+    "estimatedTime": "1 week",
+    "resources": [
+      {
+        "name": "Development Cost Levy By-law",
+        "url": "https://vancouver.ca/dcl-bylaw"
+      },
+      {
+        "name": "Rental Incentive Program Bulletin",
+        "url": "https://vancouver.ca/rental-incentive"
+      }
+    ],
+    "pdfPageReference": "Page 11, Item 5.8"
+  },
+  "5.9": {
+    "id": "5.9",
+    "category": "Additional Information",
+    "name": "Pre-Application Public Consultation Summary",
+    "criteria": "CONDITIONAL",
+    "description": "Summary of public consultation and input received; description of how the project responds to the comments from neighbours.",
+    "conditions": {
+      "type": "OR",
+      "rules": [
+        {
+          "field": "heldPreApplicationOpenHouse",
+          "operator": "==",
+          "value": true
+        },
+        {
+          "field": "isLargeSite",
+          "operator": "==",
+          "value": true
+        }
+      ]
+    },
+    "dependencies": [],
+    "relatedItems": [],
+    "estimatedTime": "1-2 weeks",
+    "pdfPageReference": "Page 11, Item 5.9"
+  },
+  "6.1": {
+    "id": "6.1",
+    "category": "May be Requested Later",
+    "name": "Consultation Materials",
+    "criteria": "OPTIONAL",
+    "description": "After application submission, staff may request additional visual materials for public consultation purposes. These may include: Presentation slides, Video flythrough.",
+    "conditions": null,
+    "dependencies": [],
+    "relatedItems": [],
+    "estimatedTime": "1-2 weeks",
+    "pdfPageReference": "Page 11, Item 6.1"
+  },
+  "6.2": {
+    "id": "6.2",
+    "category": "May be Requested Later",
+    "name": "Urban Design Panel Materials",
+    "criteria": "OPTIONAL",
+    "description": "A submission checklist will be provided by the UDP staff coordinator after a UDP meeting date has been scheduled and confirmed. UDP requires project booklets, virtual architectural model(s), video flythrough, plan set and presentation boards.",
+    "conditions": null,
+    "dependencies": [],
+    "relatedItems": [],
+    "estimatedTime": "2-3 weeks",
+    "pdfPageReference": "Page 12, Item 6.2"
+  },
+  "6.3": {
+    "id": "6.3",
+    "category": "May be Requested Later",
+    "name": "Tenant Relocation Plan",
+    "criteria": "OPTIONAL",
+    "description": "Staff may request a Tenant Relocation Plan if any residential tenants are identified on site during the rezoning review process.",
+    "conditions": null,
+    "dependencies": ["5.2"],
+    "relatedItems": [],
+    "estimatedTime": "2-4 weeks",
+    "contact": "trp@vancouver.ca",
+    "resources": [
+      {
+        "name": "Tenant Relocation and Protection Policy",
+        "url": "https://vancouver.ca/trp-policy"
+      }
+    ],
+    "pdfPageReference": "Page 12, Item 6.3"
+  },
+  "6.4": {
+    "id": "6.4",
+    "category": "May be Requested Later",
+    "name": "Resident Relocation Plan for Community Care and Assisted Living Residences",
+    "criteria": "OPTIONAL",
+    "description": "Staff may request a Resident Relocation Plan if any residents are identified on site during the rezoning review process.",
+    "conditions": null,
+    "dependencies": ["5.3"],
+    "relatedItems": [],
+    "estimatedTime": "2-4 weeks",
+    "resources": [
+      {
+        "name": "Resident Relocation Policy",
+        "url": "https://vancouver.ca/resident-relocation"
+      }
+    ],
+    "pdfPageReference": "Page 12, Item 6.4"
+  },
+  "6.5": {
+    "id": "6.5",
+    "category": "May be Requested Later",
+    "name": "Retail Impact Assessment",
+    "criteria": "OPTIONAL",
+    "description": "A study prepared by a consultant that evaluates the viability of existing adjacent commercial locations impacted by the proposal. Should be considered for applications that propose large retail uses.",
+    "conditions": null,
+    "dependencies": [],
+    "relatedItems": [],
+    "estimatedTime": "3-6 weeks",
+    "estimatedCost": "$10,000-$25,000",
+    "preparedBy": "Retail consultant",
+    "pdfPageReference": "Page 12, Item 6.5"
+  },
+  "6.6": {
+    "id": "6.6",
+    "category": "May be Requested Later",
+    "name": "Community Benefit Agreement (CBA)",
+    "criteria": "OPTIONAL",
+    "description": "There are no additional submission requirements at the rezoning stage. Through the review process, staff will begin discussions and will include rezoning conditions to meet the CBA Policy at the Development Permit stage. Required for proposals with 45,000 sq. m of new floor area. Optional for projects with minimum 9,290 sq. m floor area.",
+    "conditions": null,
+    "dependencies": [],
+    "relatedItems": [],
+    "estimatedTime": "Ongoing",
+    "resources": [
+      {
+        "name": "Community Benefit Agreement Policy",
+        "url": "https://vancouver.ca/cba-policy"
+      }
+    ],
+    "pdfPageReference": "Page 12, Item 6.6"
+  }
+}
