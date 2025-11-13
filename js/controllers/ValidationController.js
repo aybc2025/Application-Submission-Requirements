@@ -48,13 +48,13 @@ export class ValidationController {
         ${this.renderTimeline()}
 
         <div style="margin-top: 40px; display: flex; gap: 16px;">
-          <button class="btn btn-primary" onclick="window.exportManager.generatePDFReport()">
+          <button class="btn btn-primary" onclick="window.appController.generatePDFReport()">
             📊 Export PDF Report
           </button>
-          <button class="btn btn-secondary" onclick="window.exportManager.generateDeficiencyLetter()">
+          <button class="btn btn-secondary" onclick="window.appController.generateDeficiencyLetter()">
             📋 Generate Deficiency Letter
           </button>
-          <button class="btn btn-secondary" onclick="window.exportManager.generatePrintableChecklist()">
+          <button class="btn btn-secondary" onclick="window.appController.generatePrintableChecklist()">
             🖨️ Print Checklist
           </button>
         </div>

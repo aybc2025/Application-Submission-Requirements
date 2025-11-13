@@ -35,7 +35,7 @@ export class ExportView {
 
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 40px;">
             
-            <div class="card" style="cursor: pointer;" onclick="window.exportManager.generatePDFReport()">
+            <div class="card" style="cursor: pointer;" onclick="window.appController.generatePDFReport()">
               <div style="font-size: 48px; text-align: center; margin-bottom: 16px;">📊</div>
               <h3 style="text-align: center; margin-bottom: 8px;">PDF Summary Report</h3>
               <p style="text-align: center; color: #666; font-size: 14px;">
@@ -46,7 +46,7 @@ export class ExportView {
               </button>
             </div>
 
-            <div class="card" style="cursor: pointer;" onclick="window.exportManager.generateDeficiencyLetter()">
+            <div class="card" style="cursor: pointer;" onclick="window.appController.generateDeficiencyLetter()">
               <div style="font-size: 48px; text-align: center; margin-bottom: 16px;">📋</div>
               <h3 style="text-align: center; margin-bottom: 8px;">Deficiency Letter</h3>
               <p style="text-align: center; color: #666; font-size: 14px;">
@@ -57,7 +57,7 @@ export class ExportView {
               </button>
             </div>
 
-            <div class="card" style="cursor: pointer;" onclick="window.exportManager.generatePrintableChecklist()">
+            <div class="card" style="cursor: pointer;" onclick="window.appController.generatePrintableChecklist()">
               <div style="font-size: 48px; text-align: center; margin-bottom: 16px;">🖨️</div>
               <h3 style="text-align: center; margin-bottom: 8px;">Printable Checklist</h3>
               <p style="text-align: center; color: #666; font-size: 14px;">
